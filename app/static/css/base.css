@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/static/images/background-min.jpg");
+    background-size: cover;
+}
+
+.swipe_btn_white, .swipe_btn_black {
+    color: rgba(255, 255, 255, 0.905);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 0 rgb(255, 255, 255);
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+}
+
+.swipe_btn_black {
+    color: #262626;
+    border: 2px solid #262626;
+    box-shadow: inset 0 0 0 0 #262626;
+}
+
+.swipe_btn_white:hover{
+    box-shadow: inset 200px 0 0 0 rgba(255, 255, 255, 0.905);
+    color: #262626;
+}
+.swipe_btn_black:hover {
+    box-shadow: inset 200px 0 0 0 #262626;
+    color: rgba(255, 255, 255, 0.905);
+}
+
+.dummy_text{
+    text-align: center;
+    letter-spacing: 0.3vw;
+    color: rgba(255, 255, 255, 0.905);
+    font-weight: 600;
+    font-size: 8vh;
+}
+
+.contact_form_wrapper, 
+.login_container{
+    width:70%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(249, 249, 249);
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 32px -3px rgba(101, 101, 101, 1);
+    -moz-box-shadow: 0px 0px 32px -3px rgba(101, 101, 101, 1);
+    box-shadow: 0px 0px 32px -3px rgba(101, 101, 101, 1);
+}
+
+.contact_form_title,
+.login_form_titlet{
+    color: rgb(52, 52, 52);
+    font-size: 28px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5vh;
+}
+
+.contact_form_position,
+.login_wrapper{
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact_btn{
+    margin-top: 2vh;
+    text-align: center;
+}
+
+.form-group{
+    margin-top: 0.7vh;
+}
+
+.login_form_dummy{
+    text-align: center;
+    font-size: 17px;
+    margin-top: 1vh;
+}
+
+.custom_form_control {
+    outline-offset: -50px;
+    border-radius: 20px;
+    padding: .335rem 1.3rem;
+    height: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    margin-bottom: 8px;
+    outline: 0;
+}
+
+.custom_form_control::placeholder {
+    font-size: 14px;
+}
+
+.custom_form_control:focus,
+.custom_form_control:focus,
+.custom_form_control:focus {
+    border-color:none;
+    outline: none;
+    box-shadow: none;
+}
+
+form select,
+form input:not([type=checkbox]),
+form textarea {
+    width: 100%;
+}

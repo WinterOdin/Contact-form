@@ -1,0 +1,26 @@
+{% extends "../base/base.html" %}
+{% load rest_framework %}
+{% block title %}Landing Page{% endblock title %}
+{% block description %}This is landing page for recruitment task{% endblock description %}
+
+{% block content %}
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="dummy_text">
+                        Tea.
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters ">
+                <div class="col-6 d-flex justify-content-end">
+                    <div id="contact" class="swipe_btn_white contact" onclick='redirect(`{% url "contact" %}`)'>Contact Us</div>
+                </div>
+                <div class="col-6 d-flex justify-content-start">
+                    <div id="login" class="swipe_btn_white" onclick='redirect(`{% url "login" %}`)'>Login</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

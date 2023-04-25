@@ -1,0 +1,35 @@
+version: "3.11"
+services:
+  pgdb:
+    image: postgres
+    container_name: postgres_container
+    environment:
+    - POSTGRES_DB=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+  app_django:
+    build:
+      context: ./app/
+    volumes:
+      - ./app/:/usr/src/app/
+      - static_files:/usr/src/app/staticfiles
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    container_name: meant_container
+    depends_on:
+      - pgdb
+  nginx:
+    build:
+      context: ./nginx/
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - static_files:/home/app/staticfiles
+    container_name: nginx_container
+
+
+volumes:
+  static_files:

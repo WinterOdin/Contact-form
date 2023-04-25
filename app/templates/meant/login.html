@@ -1,0 +1,35 @@
+{% extends "../base/base.html" %}
+{% load rest_framework %}
+{% block title %}Login Page{% endblock title %}
+{% block description %}This is login page for recruitment task{% endblock description %}
+
+{% block content %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="login_container">
+                    <div class="login_wrapper">
+                        <div class="login_form_titlet">
+                            Login Form
+                        </div>
+                        <div class="login_form_dummy">
+                            <p>User requested login page ;)</p>
+                        </div>
+                        <div class="container">
+                            <div class="row no-gutters">
+                                <div class="col-6 d-flex justify-content-end">
+                                    <div class="swipe_btn_black lading contact_btn" onclick='redirect(`{% url "home" %}`)'>Back</div>
+                                </div>
+                                <div class="col-6 d-flex justify-content-start">
+                                    <div class="swipe_btn_black contact_btn" onclick='redirect(`{% url "contact" %}`)'>Contact form</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

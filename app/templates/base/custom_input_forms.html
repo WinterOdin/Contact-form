@@ -1,0 +1,39 @@
+<div class="form-group {% if field.errors %}has-error{% endif %}">
+    {% if field.label %}
+    <label class="col-sm-2 control-label {% if style.hide_label %}sr-only{% endif %}">
+        {{ field.label }}
+    </label>
+    {% endif %}
+
+    <div class="col-12">
+        {% if style.input_type == 'select' %}
+            <select name="{{ field.name }}"  class="form-control {{ style.class }}" {% if style.placeholder %}
+                placeholder="{{ style.placeholder }}" {% endif %} 
+                {% if field.value is not None %} value="{{ field.value }}"
+                {% endif %} autofocus required >
+                
+                {% for x in style.choice %}
+                   
+                    <option value="{{x.0}}">{{x.1}}</option>
+                {% endfor %}
+            </select>
+        {% elif style.input_type == 'textarea'  %}
+            <textarea rows="5" name="{{ field.name }}"  class="form-control {{ style.class }}"
+            {% if style.placeholder %} placeholder="{{ style.placeholder }}" {% endif %} required></textarea>
+        {% else %}
+            <input name="{{ field.name }}" class="form-control {{ style.class }}" {% if style.placeholder %}
+                placeholder="{{ style.placeholder }}" {% endif %} autofocus required >
+        {% endif %}
+
+
+        {% if field.errors %}
+        {% for error in field.errors %}
+        <span class="help-block">{{ error }}</span>
+        {% endfor %}
+        {% endif %}
+
+        {% if field.help_text %}
+        <span class="help-block">{{ field.help_text|safe }}</span>
+        {% endif %}
+    </div>
+</div>
